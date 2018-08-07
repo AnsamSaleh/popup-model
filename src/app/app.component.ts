@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  visible: boolean;
+
+  constructor(){
+    this.visible= false;
+  }
+  openPop(){
+    this.visible= !this.visible;
+  }
+  closePop(){
+    this.visible= false;
+  }
 }

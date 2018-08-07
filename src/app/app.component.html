@@ -1,19 +1,8 @@
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
-
-<button class="btn btn-primary">Open Modal</button>
-<popup>
-  <inner-popup>
-    <h3>Inner Popup Modal</h3>
+<button class="btn btn-primary" (click)="openPop()">Open Modal</button>
+<app-popup *ngIf="visible"  appClosePage>
+  <app-inner-popup appStopPropagation>
+    <h3 class="mb-5">Inner Popup Modal</h3>
     <p>Closures are closely related to function scopes, so understanding how these scopes work will help you understanding closures. In short, the most important thing to understand about scopes is that when you execute a function, a private function scope is created and used for the process of executing that function.</p>
-  </inner-popup>
-</popup>
+    <button class="btn btn-danger" (click)="closePop()">Close</button>
+  </app-inner-popup>
+</app-popup>
